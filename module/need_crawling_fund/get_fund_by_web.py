@@ -87,8 +87,11 @@ class GetNeedCrawledFundByWeb(NeedCrawledFundModule):
         # # 前海基金；
         # fund_list = [pair for pair in fund_pairs if '混合' in pair and '前海' in pair]
 
-        # 南方基金；
-        fund_list = [pair for pair in fund_pairs if '混合' in pair and '南方' in pair]
+        # # 南方基金；
+        # fund_list = [pair for pair in fund_pairs if '混合' in pair and '南方' in pair]
+
+        # 具体的基金；
+        fund_list = [pair for pair in fund_pairs if '009707' in pair or '001718' in pair]
 
         self.total = len(fund_list)
         self.task_generator = (NeedCrawledFundModule.NeedCrawledOnceFund(i[1:7], i[10:-1]) for i in fund_list)
